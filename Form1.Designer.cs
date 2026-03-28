@@ -194,7 +194,7 @@
             // 
             lblLevel.AutoSize = true;
             lblLevel.BackColor = Color.Red;
-            lblLevel.Location = new Point(13, 19);
+            lblLevel.Location = new Point(0, 50);
             lblLevel.Name = "lblLevel";
             lblLevel.Size = new Size(66, 29);
             lblLevel.TabIndex = 17;
