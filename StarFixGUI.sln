@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 18
+VisualStudioVersion = 18.2.11415.280 d18.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StarFixGUI", "StarFixGUI.csproj", "{9C898F76-859C-69AE-F8E0-137F05AFA65E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9C898F76-859C-69AE-F8E0-137F05AFA65E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C898F76-859C-69AE-F8E0-137F05AFA65E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C898F76-859C-69AE-F8E0-137F05AFA65E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C898F76-859C-69AE-F8E0-137F05AFA65E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0B69A947-1AFE-4146-A65D-906F7513A7D6}
+	EndGlobalSection
+EndGlobal
