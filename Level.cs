@@ -2,26 +2,52 @@
 
 namespace StarFixGUI
 {
-    public class Level
+    internal class Level
     {
-        private string levelName;
+        private string name;
         private List<Question> questions;
 
-        public string LevelName
+        public string Name
         {
-            get { return levelName; }
+            get { return name; }
+            private set
+            {
+                if (!string.IsNullOrWhiteSpace(value))
+                    name = value.Trim();
+                else
+                    name = "Unnamed Level";
+            }
         }
 
         public List<Question> Questions
         {
             get { return questions; }
+            private set
+            {
+                if (value != null)
+                    questions = value;
+                else
+                    questions = new List<Question>();
+            }
         }
 
-        public Level(string levelName, List<Question> questions)
+        public int QuestionCount
         {
-            this.levelName = levelName;
-            this.questions = questions;
+            get { return questions.Count; }
+        }
+
+        public Level(string name, List<Question> questions)
+        {
+            Name = name;
+            Questions = questions;
+        }
+
+        public Question GetQuestion(int index)
+        {
+            if (index >= 0 && index < questions.Count)
+                return questions[index];
+
+            return null;
         }
     }
 }
-

@@ -9,10 +9,12 @@
         public string Name
         {
             get { return name; }
-            set
+            private set
             {
                 if (!string.IsNullOrWhiteSpace(value))
-                    name = value;
+                    name = value.Trim();
+                else
+                    name = "Scientist";
             }
         }
 
@@ -29,23 +31,29 @@
         public int Score
         {
             get { return score; }
-            set
+            private set
             {
                 if (value >= 0)
                     score = value;
             }
         }
 
-        public Player(string name, int lives)
+        public Player(string name)
         {
-            this.name = name;
-            this.lives = lives;
-            score = 0;
+            Name = name;
+            Lives = 3;
+            Score = 0;
+        }
+
+        public void AddPoint()
+        {
+            Score += 10;
         }
 
         public void AddScore(int points)
         {
-            score += points;
+            if (points > 0)
+                Score += points;
         }
 
         public void LoseLife()
@@ -57,6 +65,16 @@
         public bool IsAlive()
         {
             return lives > 0;
+        }
+
+        public void ResetLives()
+        {
+            Lives = 3;
+        }
+
+        public void ResetScore()
+        {
+            Score = 0;
         }
     }
 }
