@@ -1,4 +1,5 @@
 (a) Project Title: **StarFix**
+
 (b) Group Members
 - Ranjitaranee A/P Ramesh (24006978)
 - Nurul Iman Batrisyia binti Mohd Romizan (25014830)
@@ -71,6 +72,7 @@ Exception Handling improves system robustness using try-catch blocks. In the Pro
 
 (g) How to Run the Program
 There are two methods given. Choose the one that works best for you.
+
 **Method 1:**
 1. Click on the green "Code" button on the top right of the GitHub repository.
 2. Select "Download ZIP" option and extract the files once downloaded.
@@ -84,7 +86,7 @@ There are two methods given. Choose the one that works best for you.
 4. Press F5 or click "Start Debugging" to run the application.
 
 (h) Project Structure
-| **File        | Description **                                                                           |
+| **File**      | **Description **                                                                         |
 |---------------|------------------------------------------------------------------------------------------|
 | Program.cs    | Main program that starts the game and handles user interaction.                          |
 | Form1.cs      | The Graphical User Interface (GUI) that manages user inputs, timers and visual updates.  |
