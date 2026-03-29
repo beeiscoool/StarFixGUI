@@ -84,12 +84,15 @@ Method 2:
 4. Press F5 or click "Start Debugging" to run the application.
 
 (h) Project Structure
-File,Description
-Program.cs,The main entry point that initializes the application and handles startup exceptions.
-Form1.cs,"The Graphical User Interface (GUI) that manages user inputs, timers, and visual updates."
-Game.cs,"The central controller managing the game flow, player stats, and level logic."
-Level.cs,Represents a game stage and contains a collection of questions.
-Player.cs,"Manages player-specific data including name, lives, and score."
-Spaceship.cs,Handles the repair progress logic and generates system status messages.
-Question.cs,Contains the abstract Question base class and the SpaceQuizQuestion derived class.
+|---------------|------------------------------------------------------------------------------------------|
+| File          | Description                                                                              |
+|---------------|------------------------------------------------------------------------------------------|
+| Program.cs    | Main program that starts the game and handles user interaction.                          |
+| Form1.cs      | The Graphical User Interface (GUI) that manages user inputs, timers and visual updates.  |
+| Game.cs       | Controls overall game logic, levels and flow of the game.                                |
+| Level.cs      | Represents each game level and stores a list of questions.                               |
+| Player.cs     | Manages player-specific data including name, lives and score.                            |
+| Spaceship.cs  | Manages spaceship repair progress and status messages.                                   |
+| Question.cs   | Contains the abstract Question base class and the SpaceQuizQuestion derived class.       |
+|---------------|------------------------------------------------------------------------------------------|
 
