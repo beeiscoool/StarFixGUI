@@ -1,85 +1,108 @@
-(a) Project Tittle: StarFix
+(a) Project Title: StarFix
+(b) Group Members
+Ranjitaranee A/P Ramesh (24006978)
 
-(b) Group Members:
-Ranjitaranee 
-Nurul Iman Batrisyia binti Mohd Romizan
-Engku Nurul Faraheen binti Engku Zaid
-Shanchanaa Subramaniam
-Dzulfan bin Mohd Noor
+Nurul Iman Batrisyia binti Mohd Romizan (25014830)
+
+Engku Nurul Faraheen binti Engku Zaid (25011533)
+
+Shanchanaa A/P Subramaniam (24006193)
+
+Dzulfan bin Mohd Noor (21001006)
 
 (c) Project Description
-StarFix is a C# Windows Forms (GUI-based) quiz game where the player takes on the role of a scientist repairing a damaged spaceship. The player must answer space-related quiz questions correctly to restore the ship’s systems and safely return to Earth. Each correct answer repairs the spaceship and increases the player’s score, while incorrect answers or timeouts reduce lives. The game progresses through 2 levels with increasing difficulty and the mission is successful only if the player completes all levels before losing all lives.
+StarFix is a C# Windows Forms (GUI-based) quiz game where the player takes on the role of a scientist repairing a damaged spaceship. The player must answer space-related quiz questions correctly to restore the ship’s systems and safely return to Earth. Each correct answer repairs the spaceship and increases the player’s score, while incorrect answers or timeouts reduce lives. The game progresses through 2 levels with increasing difficulty, and the mission is successful only if the player completes all levels before losing all lives.
 
-The system integrates game logic, user interaction and real-time feedback using a graphical interface, making the gameplay interactive and engaging.
+The system integrates game logic, user interaction, and real-time feedback using a graphical interface, making the gameplay interactive and engaging.
 
 (d) System Features
 (i) Player Management
-   - Player can enter their name before starting
-   - Tracks player score and remaining lives
+Player can enter their name before starting.
+
+Tracks player score and remaining lives (starts with 3 lives).
+
 (ii) Quiz System
-   - Multiple-choice questions (3 options per question)
-   - Questions are organized into levels
-   - Input validation ensures only valid answers (1–3) are accepted
+Multiple-choice questions (3 options per question).
+
+Questions are organized into themed levels.
+
+Input validation ensures only valid answers are accepted.
+
 (iii) Level System
-   - Multiple levels (2 levels)
-   - Level progression after completion
-   - Option to proceed or end after each level
+Multiple levels (2 levels currently implemented).
+
+Level progression triggers automatically after completing all questions in a level.
+
+Option to proceed to the next stage or end the session.
+
 (iv) Spaceship Repair Mechanism
-   - Spaceship repair progress increases with correct answers
-   - Damage or reset occurs when player fails
-   - Status messages provide real-time feedback
+Spaceship repair progress (0–100%) increases with correct answers.
+
+Status messages provide real-time feedback on ship integrity.
+
+Reset or damage occurs if the player fails a level.
+
 (v) Timer System
-   - Countdown timer (30 seconds per question)
-   - Player loses a life if time runs out
-   - Automatically proceeds to next question after timeout
+Countdown timer (30 seconds per question).
+
+Player loses a life if the timer reaches zero.
+
+Automatically proceeds to the next question after a timeout.
+
 (vi) Game State Control
-   - Detects level completion, game completion and player failure
-   - Restart level when all lives are lost
-   - Displays final mission result (Success/Failure)
+Detects level completion, overall game success, and player failure.
+
+Restart level option when all lives are lost.
+
+Displays final mission results (Success/Failure) with the final score.
+
 (vii) Graphical User Interface (GUI)
-   - Built using Windows Forms
-   - Interactive buttons (Start, Submit)
-   - Displays question, choices, score, lives and timer
-   - Uses message boxes for feedback and alerts
-(viii)Exception Handling
-   - Handles unexpected errors during application startup
-   - Input validation prevents invalid user entries
+Built using Windows Forms for a visual experience.
+
+Interactive controls (Buttons for Start, Submit, and Navigation).
+
+Real-time display for questions, choices, score, lives, and the timer.
+
+(viii) Exception Handling
+Robust startup error handling to prevent application crashes.
+
+Property-level validation to maintain data integrity.
 
 (e) OOP Concepts Used
-The StarFix system applies several Object-Oriented Programming (OOP) concepts to ensure a well-structured and maintainable design. Encapsulation is implemented throughout the system by using private fields and public properties to control access to data. For example, classes such as `Player`, `Spaceship` and `Level` restrict direct access to their internal variables like score, lives and repair progress. Validation logic is also included within property setters to ensure that only valid values are assigned which improves data integrity.
+Encapsulation
+Encapsulation is demonstrated through private fields and public properties. For example, the Question class has private fields questionText, options, and correctAnswer. Access to these fields is controlled through public read-only properties like QuestionText and Options. By providing only a get accessor, the class prevents direct modification of data by other parts of the program, ensuring data integrity.
 
-Abstraction is demonstrated through the use of the abstract class `Question`, which defines a general structure for all question types without exposing full implementation details. This allows the system to focus on what a question should do rather than how it is implemented. The abstract method `GetFormattedQuestion()` ensures that all derived classes provide their own version of how a question is displayed.
+Abstraction
+Abstraction is achieved through the use of the abstract keyword to define the shared structure of questions. The abstract Question class acts as a blueprint, ensuring that all derived question classes implement essential functionality, such as the GetFormattedQuestion() method. This enforces consistency, allowing the Game controller to interact with all question objects through a unified interface.
 
-Inheritance is used by the `SpaceQuizQuestion` class, which is derived from the `Question` class. This allows it to reuse common properties and methods while also customizing behavior specific to the game. Through inheritance, code duplication is reduced and the system becomes easier to extend.
+Inheritance
+Inheritance is implemented via the abstract Question class, which acts as a parent for specific question types. The SpaceQuizQuestion class inherits from Question, allowing it to reuse common properties and behaviors (like the constructor and checking logic) while adding specific functionality for space-themed content. This eliminates code duplication and makes the system easy to extend.
 
-Polymorphism is achieved through method overriding and virtual methods. The `SpaceQuizQuestion` class overrides the `GetFormattedQuestion()` method to provide a unique format for displaying questions. Additionally, the `CheckAnswer()` method is defined as virtual in the base class, allowing it to be modified in derived classes if needed. This enables flexibility in how different question types behave.
+Polymorphism
+Polymorphism is achieved through method overriding. The abstract method GetFormattedQuestion() is declared in the Question class and is overridden in the SpaceQuizQuestion class to provide a unique mission-themed format. This allows the system to treat all question objects uniformly while executing specific, flexible behavior at runtime.
 
-Furthermore, the system uses collections, specifically `List<T>`, to manage groups of data such as questions, levels and answer options. This allows dynamic storage and easy iteration through elements during gameplay.
+Collections
+Collections, specifically List<T>, are utilized to manage multiple questions and levels efficiently. The Level class uses a List<Question> to store stage-specific data. This allows for dynamic storage, easy iteration during gameplay, and ensures the game can scale to include more content in the future.
 
-Finally, exception handling is implemented to improve system reliability. A try-catch block in the main program prevents the application from crashing due to unexpected errors, while input validation in the GUI ensures that users provide correct and acceptable input values.
-
+Exception Handling
+Exception Handling improves system robustness using try-catch blocks. In the Program class, the application startup is wrapped in a try-catch block to handle unexpected errors gracefully without crashing. Additionally, input validation and null-checks (such as in the Questions property setter) ensure the game remains stable during user interaction.
 
 (g) How to Run the Program
-(i) Click on the green "Code" button on the top right of the GitHub repository
-(ii) Find "launch in Visual Studio" option and click on it
-(iii) Clone GitHub repository
-(iv) Run using Start Debugging (F5)
+Click on the green "Code" button on the top right of the GitHub repository.
 
-OR
-(i) Click on the green "Code" button on the top right of the GitHub repository
-(ii) Find "Download ZIP files" option and click on it
-(iii) Extract ZIP files once downloaded
-(iv) Open the .sln file in Visual Studio
-(v) Click Start Debugging (F5) to run
+Select "Download ZIP" and extract the files once downloaded.
+
+Open the .sln (Solution) file in Visual Studio 2022.
+
+Press F5 or click Start Debugging to run the application.
 
 (h) Project Structure
-
-File                 Description
-Program.cs           Main program that starts the game and handle user interaction
-Game.cs              Controls overall game logic, levels and flow of the game
-Level.cs             Represents each game level and stores a list of questions
-Player.cs            Stores player information such as name, score and lives
-Spaceship.cs         Manages spaceship repair progress and status messages
-Question.cs          Abstract class that defines the structure of a question
-SpaceQuizQuestion    Child class implementing specific question behaviour
+File,Description
+Program.cs,The main entry point that initializes the application and handles startup exceptions.
+Form1.cs,"The Graphical User Interface (GUI) that manages user inputs, timers, and visual updates."
+Game.cs,"The central controller managing the game flow, player stats, and level logic."
+Level.cs,Represents a game stage and contains a collection of questions.
+Player.cs,"Manages player-specific data including name, lives, and score."
+Spaceship.cs,Handles the repair progress logic and generates system status messages.
+Question.cs,Contains the abstract Question base class and the SpaceQuizQuestion derived class.
 
