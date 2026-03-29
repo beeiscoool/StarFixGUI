@@ -84,7 +84,6 @@ Method 2:
 4. Press F5 or click "Start Debugging" to run the application.
 
 (h) Project Structure
-|---------------|------------------------------------------------------------------------------------------|
 | File          | Description                                                                              |
 |---------------|------------------------------------------------------------------------------------------|
 | Program.cs    | Main program that starts the game and handles user interaction.                          |
@@ -94,5 +93,3 @@ Method 2:
 | Player.cs     | Manages player-specific data including name, lives and score.                            |
 | Spaceship.cs  | Manages spaceship repair progress and status messages.                                   |
 | Question.cs   | Contains the abstract Question base class and the SpaceQuizQuestion derived class.       |
-|---------------|------------------------------------------------------------------------------------------|
-
